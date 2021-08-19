@@ -32,4 +32,10 @@ public class SharedDriver {
         webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         return webDriver;
     }
+
+    protected static void closeDriver() {
+        if (webDriver != null) {
+            webDriver.close();
+        }
+    }
 }
