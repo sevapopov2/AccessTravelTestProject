@@ -40,4 +40,8 @@ public class BasePage {
     protected void sendKeysToElementByXpath(String xpath, String text) {
         findElementByXpath(xpath).sendKeys(text);
     }
+
+    protected String getCurrentUrl() {
+        return webDriver.getCurrentUrl();
+    }
 }
