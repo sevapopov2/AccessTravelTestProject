@@ -22,7 +22,7 @@ public class SanityTest extends UseCaseBase{
 
     @Test
     public void mainPageLoadTest() {
-        boolean success = mainPage.isLinkVisible();
+        boolean success = mainPage.isLogoVisible();
         assertTrue(success);
     }
 }
