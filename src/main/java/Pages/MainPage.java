@@ -28,4 +28,8 @@ public class MainPage extends BasePage {
         clickElementByXpath(TOURS_LINK);
         return new ToursPage();
     }
+    public ThingsToDoPage openThingsToDoPage() {
+        clickElementByXpath(THINGS_TO_DO_LINK);
+        return new ThingsToDoPage();
+    }
 }

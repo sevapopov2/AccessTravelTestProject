@@ -1,7 +1,4 @@
-import Pages.GuidesPage;
-import Pages.HotelsPage;
-import Pages.MainPage;
-import Pages.ToursPage;
+import Pages.*;
 import Utilities.UseCaseBase;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,6 +41,12 @@ public class SanityTest extends UseCaseBase{
     public void toursPageLoadTest() {
         ToursPage toursPage = mainPage.openToursPage();
         boolean success = toursPage.isHeadingVisible();
+        assertTrue(success);
+    }
+    @Test
+    public void thingsToDoLoadTest() {
+        ThingsToDoPage thingsToDoPage = mainPage.openThingsToDoPage();
+        boolean success = thingsToDoPage.isHeadingVisible();
         assertTrue(success);
     }
 }
