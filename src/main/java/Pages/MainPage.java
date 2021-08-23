@@ -24,4 +24,8 @@ public class MainPage extends BasePage {
         clickElementByXpath(GUIDES_LINK);
         return new GuidesPage();
     }
+    public ToursPage openToursPage() {
+        clickElementByXpath(TOURS_LINK);
+        return new ToursPage();
+    }
 }
