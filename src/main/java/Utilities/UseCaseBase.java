@@ -14,7 +14,7 @@ public class UseCaseBase {
     public static void setupMain() {
         page = new BasePage();
         webDriver = SharedDriver.getWebDriver(SharedDriver.Browser.CHROME);
-        page.setWebdriver(webDriver);
+        page.setWebDriver(webDriver);
     }
 
     @AfterAll
