@@ -19,8 +19,12 @@ public class HotelsPageTest extends UseCaseBase {
         mainPage.openHotelsPage();
     }
     @Test
-    public void destinationsSelectionTest() {
+    public void destinationsFindTest() {
         boolean success = hotelsPage.destinationsListFind();
         assertTrue(success);
+    }
+    @Test
+    public void destinationsSelectionTest() {
+        hotelsPage.destinationsListSelection();
     }
 }

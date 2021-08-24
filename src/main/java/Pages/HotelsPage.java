@@ -11,8 +11,10 @@ public class HotelsPage extends BasePage{
     public boolean destinationsListFind() {
         return elementExists(DESTINATIONS_LIST);
     }
-    public String piterOptionFind() {
+    public void destinationsListSelection() {
         clickElementByXpath(DESTINATIONS_LIST);
+    }
+    public String piterOptionFind() {
         return findElementByXpath(PITER_OPTION).getText();
     }
 }
