@@ -8,10 +8,11 @@ public class HotelsPage extends BasePage{
         boolean isVisible = elementExists(HOTELS_HEADING);
         return isVisible;
     }
-    public void destinationsListSelection() {
-        clickElementByXpath(DESTINATIONS_LIST);
+    public boolean destinationsListFind() {
+        return elementExists(DESTINATIONS_LIST);
     }
-    public void piterOptionSelection() {
-        clickElementByXpath(PITER_OPTION);
+    public String piterOptionFind() {
+        clickElementByXpath(DESTINATIONS_LIST);
+        return findElementByXpath(PITER_OPTION).getText();
     }
 }
