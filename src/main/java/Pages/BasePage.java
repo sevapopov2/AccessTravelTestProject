@@ -27,6 +27,10 @@ public class BasePage {
         findElementByXpath(xpath).click();
     }
 
+    protected void clearEditFieldByXpath(String xpath) {
+        findElementByXpath(xpath).clear();
+    }
+
     protected boolean elementExists(String xpath) {
         try {
             findElementByXpath(xpath);
