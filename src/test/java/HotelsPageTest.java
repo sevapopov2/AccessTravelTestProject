@@ -40,4 +40,10 @@ public class HotelsPageTest extends UseCaseBase {
         String checkinDate = hotelsPage.checkinDateChanging("2021-09-25");
         assertEquals("2021-09-25", checkinDate);
     }
+
+    @Test
+    public void checkoutChangingTest() {
+        String checkOutDate = hotelsPage.checkoutDateChanging("2021-10-01");
+        assertEquals("2021-10-01", checkOutDate);
+    }
 }

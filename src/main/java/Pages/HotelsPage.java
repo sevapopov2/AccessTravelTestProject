@@ -32,4 +32,10 @@ public class HotelsPage extends BasePage {
         sendKeysToElementByXpath(CHECKIN_DATE, checkinDate);
         return findElementByXpath(CHECKIN_DATE).getAttribute("value");
     }
+
+    public String checkoutDateChanging(String checkoutDate) {
+        clearEditFieldByXpath(CHECKOUT_DATE);
+        sendKeysToElementByXpath(CHECKOUT_DATE, checkoutDate);
+        return findElementByXpath(CHECKOUT_DATE).getAttribute("value");
+    }
 }
