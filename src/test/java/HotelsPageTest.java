@@ -46,9 +46,16 @@ public class HotelsPageTest extends UseCaseBase {
         String checkOutDate = hotelsPage.checkoutDateSelection("2021-10-01");
         assertEquals("2021-10-01", checkOutDate);
     }
+
     @Test
     public void adultsCountSelectionTest() {
         String adultsCount = hotelsPage.adultsCountSelection("4");
         assertEquals("4", adultsCount);
+    }
+
+    @Test
+    public void childrenCountSelectionTest() {
+        String childrenCount = hotelsPage.childrenCountSelection("2");
+        assertEquals("2", childrenCount);
     }
 }

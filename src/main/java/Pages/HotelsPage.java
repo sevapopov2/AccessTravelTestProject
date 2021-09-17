@@ -44,4 +44,9 @@ public class HotelsPage extends BasePage {
         sendKeysToElementByXpath(ADULTS_COUNT_EDITOR, adultsCount);
         return findElementByXpath(ADULTS_COUNT_EDITOR).getAttribute("value");
     }
+    public String childrenCountSelection(String childrenCount) {
+        clearEditFieldByXpath(CHILDREN_COUNT_EDITOR);
+        sendKeysToElementByXpath(CHILDREN_COUNT_EDITOR, childrenCount);
+        return findElementByXpath(CHILDREN_COUNT_EDITOR).getAttribute("value");
+    }
 }
