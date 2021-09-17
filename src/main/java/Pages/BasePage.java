@@ -1,6 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -44,6 +45,9 @@ public class BasePage {
         findElementByXpath(xpath).sendKeys(text);
     }
 
+    protected void sendKeypressesByXpath(String xpath, Keys keys) {
+        findElementByXpath(xpath).sendKeys(keys);
+    }
     protected String getCurrentUrl() {
         return webDriver.getCurrentUrl();
     }

@@ -1,4 +1,5 @@
 import Pages.HotelsPage;
+import Pages.HotelsResultsPage;
 import Pages.MainPage;
 import Utilities.UseCaseBase;
 import org.junit.jupiter.api.BeforeAll;
@@ -57,5 +58,12 @@ public class HotelsPageTest extends UseCaseBase {
     public void childrenCountSelectionTest() {
         String childrenCount = hotelsPage.childrenCountSelection("2");
         assertEquals("2", childrenCount);
+    }
+    @Test
+    public void openResultsPageTest() {
+        HotelsResultsPage hotelsResultsPage = hotelsPage.openResultsPage();
+        boolean resultsAreAvailable = hotelsResultsPage.resultsAreAvailable();
+        assertTrue(resultsAreAvailable);
+
     }
 }

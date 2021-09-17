@@ -1,5 +1,7 @@
 package Pages;
 
+import org.openqa.selenium.Keys;
+
 public class HotelsPage extends BasePage {
     private static final String HOTELS_HEADING = "//h3[@class='sub-heading']";
     private static final String DESTINATIONS_LIST = "//select[@id='Filter_DestinationId']";
@@ -44,9 +46,15 @@ public class HotelsPage extends BasePage {
         sendKeysToElementByXpath(ADULTS_COUNT_EDITOR, adultsCount);
         return findElementByXpath(ADULTS_COUNT_EDITOR).getAttribute("value");
     }
+
     public String childrenCountSelection(String childrenCount) {
         clearEditFieldByXpath(CHILDREN_COUNT_EDITOR);
         sendKeysToElementByXpath(CHILDREN_COUNT_EDITOR, childrenCount);
         return findElementByXpath(CHILDREN_COUNT_EDITOR).getAttribute("value");
+    }
+
+    public HotelsResultsPage openResultsPage() {
+        sendKeypressesByXpath(SEARCH_BUTTON, Keys.ENTER);
+        return new HotelsResultsPage();
     }
 }

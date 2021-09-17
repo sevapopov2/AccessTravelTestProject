@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SanityTest extends UseCaseBase{
+public class SanityTest extends UseCaseBase {
     private static MainPage mainPage;
 
     @BeforeAll
@@ -24,6 +24,7 @@ public class SanityTest extends UseCaseBase{
         boolean success = mainPage.isLogoVisible();
         assertTrue(success);
     }
+
     @Test
     public void hotelsPageLoadTest() {
         HotelsPage hotelsPage = mainPage.openHotelsPage();
@@ -37,12 +38,14 @@ public class SanityTest extends UseCaseBase{
         boolean success = guidesPage.isHeadingVisible();
         assertTrue(success);
     }
+
     @Test
     public void toursPageLoadTest() {
         ToursPage toursPage = mainPage.openToursPage();
         boolean success = toursPage.isHeadingVisible();
         assertTrue(success);
     }
+
     @Test
     public void thingsToDoLoadTest() {
         ThingsToDoPage thingsToDoPage = mainPage.openThingsToDoPage();
