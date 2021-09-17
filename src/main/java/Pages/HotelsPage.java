@@ -6,8 +6,8 @@ public class HotelsPage extends BasePage {
     private static final String PITER_OPTION = "//select[@id='Filter_DestinationId']/option[5]";
     private static final String CHECKIN_DATE = "//input[@name='Filter.CheckIn']";
     private static final String CHECKOUT_DATE = "//input[@name='Filter.CheckOut']";
-    private static final String ADULTS_COUNT_EDITOR = "//input[@id='Filter_AdultNum";
-    private static final String CHILDREN_COUNT_EDITOR = "//input[@id='Filter_ChildrenNum]";
+    private static final String ADULTS_COUNT_EDITOR = "//input[@id='Filter_AdultNum']";
+    private static final String CHILDREN_COUNT_EDITOR = "//input[@id='Filter_ChildrenNum']";
     private static final String SEARCH_BUTTON = "//button[@type='submit']";
 
     public boolean headingIsVisible() {
@@ -27,15 +27,21 @@ public class HotelsPage extends BasePage {
         return elementExists(CHECKIN_DATE);
     }
 
-    public String checkinDateChanging(String checkinDate) {
+    public String checkinDateSelection(String checkinDate) {
         clearEditFieldByXpath(CHECKIN_DATE);
         sendKeysToElementByXpath(CHECKIN_DATE, checkinDate);
         return findElementByXpath(CHECKIN_DATE).getAttribute("value");
     }
 
-    public String checkoutDateChanging(String checkoutDate) {
+    public String checkoutDateSelection(String checkoutDate) {
         clearEditFieldByXpath(CHECKOUT_DATE);
         sendKeysToElementByXpath(CHECKOUT_DATE, checkoutDate);
         return findElementByXpath(CHECKOUT_DATE).getAttribute("value");
+    }
+
+    public String adultsCountSelection(String adultsCount) {
+        clearEditFieldByXpath(ADULTS_COUNT_EDITOR);
+        sendKeysToElementByXpath(ADULTS_COUNT_EDITOR, adultsCount);
+        return findElementByXpath(ADULTS_COUNT_EDITOR).getAttribute("value");
     }
 }
