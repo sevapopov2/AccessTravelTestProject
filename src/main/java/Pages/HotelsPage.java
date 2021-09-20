@@ -25,6 +25,10 @@ public class HotelsPage extends BasePage {
         return findElementByXpath(PITER_OPTION).getText();
     }
 
+    public void piterOptionClick() {
+        clickElementByXpath(PITER_OPTION);
+    }
+
     public boolean checkinDateFind() {
         return elementExists(CHECKIN_DATE);
     }

@@ -66,4 +66,19 @@ public class HotelsPageTest extends UseCaseBase {
         assertTrue(resultsAreAvailable);
 
     }
+    @Test
+    public void findPiterHotelsTest() {
+        hotelsPage.piterOptionClick();
+        String checkinDate = hotelsPage.checkinDateSelection("2021-10-01");
+        assertEquals("2021-10-01", checkinDate);
+        String checkoutDate = hotelsPage.checkoutDateSelection("2021-10-10");
+        assertEquals("2021-10-10", checkoutDate);
+        String adultsCount = hotelsPage.adultsCountSelection("4");
+        assertEquals("4", adultsCount);
+        String childrenCount = hotelsPage.childrenCountSelection("0");
+        assertEquals("0", childrenCount);
+        HotelsResultsPage hotelsResultsPage = hotelsPage.openResultsPage();
+        boolean resultsAreLoaded = hotelsResultsPage.resultsAreAvailable();
+        assertTrue(resultsAreLoaded);
+    }
 }
