@@ -28,4 +28,8 @@ public class GuidesPageTest extends UseCaseBase {
         boolean success = guidesPage.countrySelectorVisible();
         assertTrue(success);
     }
+    @Test
+    public void russiaPiterSelectionTest() {
+        guidesPage.russiaPiterSelection();
+    }
 }
