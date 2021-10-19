@@ -10,10 +10,10 @@ public class GuidesPage extends BasePage {
     private static final String PITER_OPTION = "//select[@id='Filter_DestinationId']/option[3]";
     //    guide types
     private static final String GUIDE_TYPE_LIST = "//select[@id='Filter_GuideType']";
-    private static final String ACCOMPANY_GUIDE = "//select[@id='Filter_GuideType']/option[2]";
-    private static final String VOLUNTEER_GUIDE = "//select[@id='Filter_GuideType']/option[3]";
-    private static final String ONLINE_ADVISOR_GUIDE = "//select[@id='Filter_GuideType']/option[4]";
-    private static final String PROFESSIONAL_GUIDE = "//select[@id='Filter_GuideType']/option[5]";
+    private static final int ACCOMPANY_GUIDE = 2;
+    private static final int VOLUNTEER_GUIDE = 3;
+    private static final int ONLINE_ADVISOR_GUIDE = 4;
+    private static final int PROFESSIONAL_GUIDE = 5;
 
     public boolean isHeadingVisible() {
         return elementExists(GUIDES_HEADING);
@@ -29,14 +29,12 @@ public class GuidesPage extends BasePage {
         clickElementByXpath(PITER_OPTION);
     }
 
-    public String guideTypeSelection(String name) {
+    public String guideTypeSelection(int number) {
         sendKeypressesByXpath(GUIDE_TYPE_LIST, Keys.ENTER);
-        clickElementByXpath(name);
-        return findElementByXpath(name).getText();
+        String guideType = GUIDE_TYPE_LIST + "/option[" + number + "]";
+        String guideTypeValue = findElementByXpath(guideType).getText();
+        clickElementByXpath(guideType);
+        return guideTypeValue;
     }
 
-    public String accompanyguideSelection() {
-        clickElementByXpath(ACCOMPANY_GUIDE);
-        return findElementByXpath(ACCOMPANY_GUIDE).getText();
-    }
 }
