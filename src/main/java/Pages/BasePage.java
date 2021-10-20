@@ -45,8 +45,8 @@ public class BasePage {
         findElementByXpath(xpath).sendKeys(text);
     }
 
-    protected void sendKeypressesByXpath(String xpath, Keys keys) {
-        findElementByXpath(xpath).sendKeys(keys);
+    protected void sendEnterKeyByXpath(String xpath) {
+        findElementByXpath(xpath).sendKeys(Keys.ENTER);
     }
     protected String getCurrentUrl() {
         return webDriver.getCurrentUrl();

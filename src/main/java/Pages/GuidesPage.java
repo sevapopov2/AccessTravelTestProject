@@ -1,7 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.Keys;
-
 public class GuidesPage extends BasePage {
     private static final String GUIDES_HEADING = "//h2[contains(text(), 'and Guides')]";
     private static final String COUNTRY_SELECTION_LIST = "//select[@id='Filter_CountryId']";
@@ -24,13 +22,13 @@ public class GuidesPage extends BasePage {
     }
 
     public void russiaPiterSelection() {
-        sendKeypressesByXpath(COUNTRY_SELECTION_LIST, Keys.ENTER);
+        sendEnterKeyByXpath(COUNTRY_SELECTION_LIST);
         clickElementByXpath(COUNTRY_RUSSIA_OPTION);
         clickElementByXpath(PITER_OPTION);
     }
 
     public String guideTypeSelection(int number) {
-        sendKeypressesByXpath(GUIDE_TYPE_LIST, Keys.ENTER);
+        sendEnterKeyByXpath(GUIDE_TYPE_LIST);
         String guideType = GUIDE_TYPE_LIST + "/option[" + number + "]";
         String guideTypeValue = findElementByXpath(guideType).getText();
         clickElementByXpath(guideType);

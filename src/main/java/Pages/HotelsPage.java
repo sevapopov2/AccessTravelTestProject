@@ -1,7 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.Keys;
-
 public class HotelsPage extends BasePage {
     private static final String HOTELS_HEADING = "//h3[@class='sub-heading']";
     private static final String DESTINATIONS_LIST = "//select[@id='Filter_DestinationId']";
@@ -58,7 +56,7 @@ public class HotelsPage extends BasePage {
     }
 
     public HotelsResultsPage openResultsPage() {
-        sendKeypressesByXpath(SEARCH_BUTTON, Keys.ENTER);
+        sendEnterKeyByXpath(SEARCH_BUTTON);
         return new HotelsResultsPage();
     }
 }
