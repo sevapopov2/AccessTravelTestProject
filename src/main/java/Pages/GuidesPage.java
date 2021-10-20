@@ -35,4 +35,9 @@ public class GuidesPage extends BasePage {
         return guideTypeValue;
     }
 
+    public String professionalGuideTypeSelection() {
+        String professionalGuideType = GUIDE_TYPE_LIST + "/option[" + PROFESSIONAL_GUIDE + "]";
+        clickElementByXpath(professionalGuideType);
+        return findElementByXpath(professionalGuideType).getText();
+    }
 }
