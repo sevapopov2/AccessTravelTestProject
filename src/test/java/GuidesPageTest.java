@@ -42,9 +42,19 @@ public class GuidesPageTest extends UseCaseBase {
         String currentType = guidesPage.guideTypeSelection(number);
         assertNotNull(currentType);
     }
+
     @Test
     public void professionalGuideTypeSelectionTest() {
         String guideTypeValue = guidesPage.professionalGuideTypeSelection();
         assertEquals("Professional Guide", guideTypeValue);
+    }
+    @Test
+    public void piterGuidesSearchTest() {
+        guidesPage.russiaPiterSelection();
+        guidesPage.professionalGuideTypeSelection();
+        guidesPage.searchButtonPress();
+        String selectedState = guidesPage.professionalGuideSelectedState();
+        assertNotNull(selectedState);
+        assertEquals("true", selectedState);
     }
 }

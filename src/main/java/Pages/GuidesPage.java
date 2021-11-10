@@ -12,6 +12,7 @@ public class GuidesPage extends BasePage {
     private static final int VOLUNTEER_GUIDE = 3;
     private static final int ONLINE_ADVISOR_GUIDE = 4;
     private static final int PROFESSIONAL_GUIDE = 5;
+    private static final String SEARCH_BUTTON = "//button[@type='submit']";
 
     public boolean isHeadingVisible() {
         return elementExists(GUIDES_HEADING);
@@ -39,5 +40,15 @@ public class GuidesPage extends BasePage {
         String professionalGuideType = GUIDE_TYPE_LIST + "/option[" + PROFESSIONAL_GUIDE + "]";
         clickElementByXpath(professionalGuideType);
         return findElementByXpath(professionalGuideType).getText();
+    }
+
+    public void searchButtonPress() {
+        sendEnterKeyByXpath(SEARCH_BUTTON);
+    }
+
+    public String professionalGuideSelectedState() {
+        String professionalGuideType = GUIDE_TYPE_LIST + "/option[" + PROFESSIONAL_GUIDE + "]";
+        String optionSelectedState = findElementByXpath(professionalGuideType).getAttribute("selected");
+        return optionSelectedState;
     }
 }
