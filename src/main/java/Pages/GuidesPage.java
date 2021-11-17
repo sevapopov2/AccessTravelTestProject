@@ -13,7 +13,7 @@ public class GuidesPage extends BasePage {
     private static final int ONLINE_ADVISOR_GUIDE = 4;
     private static final int PROFESSIONAL_GUIDE = 5;
     private static final String SEARCH_BUTTON = "//button[@type='submit']";
-    private static final String ACCESSIBLE_PITER_GUIDE = "//a[text(), '24']";
+    private static final String ACCESSIBLE_PITER_GUIDE = "//a[@href='/en-US/Guide/Index/24']";
 
     public boolean isHeadingVisible() {
         return elementExists(GUIDES_HEADING);

@@ -56,5 +56,7 @@ public class GuidesPageTest extends UseCaseBase {
         String selectedState = guidesPage.professionalGuideSelectedState();
         assertNotNull(selectedState);
         assertEquals("true", selectedState);
+        boolean isGuideLinkVisible = guidesPage.isGuideVisible();
+        assertTrue(isGuideLinkVisible);
     }
 }
