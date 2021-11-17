@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 public class BasePage {
     protected static WebDriver webDriver;
     protected static WebDriverWait wait;
@@ -48,6 +50,13 @@ public class BasePage {
     protected void sendEnterKeyByXpath(String xpath) {
         findElementByXpath(xpath).sendKeys(Keys.ENTER);
     }
+
+    protected WebElement findElementByLocator(String locatorXpath, String xpath, WebElement locator, int pixelsCount) {
+        locator = findElementByXpath(locatorXpath);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(with(By.xpath(xpath)).near(locator, pixelsCount)));
+        return element;
+    }
+
     protected String getCurrentUrl() {
         return webDriver.getCurrentUrl();
     }

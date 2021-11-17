@@ -13,6 +13,7 @@ public class GuidesPage extends BasePage {
     private static final int ONLINE_ADVISOR_GUIDE = 4;
     private static final int PROFESSIONAL_GUIDE = 5;
     private static final String SEARCH_BUTTON = "//button[@type='submit']";
+    private static final String ACCESSIBLE_PITER_GUIDE = "//a[text(), '24']";
 
     public boolean isHeadingVisible() {
         return elementExists(GUIDES_HEADING);
@@ -50,5 +51,8 @@ public class GuidesPage extends BasePage {
         String professionalGuideType = GUIDE_TYPE_LIST + "/option[" + PROFESSIONAL_GUIDE + "]";
         String optionSelectedState = findElementByXpath(professionalGuideType).getAttribute("selected");
         return optionSelectedState;
+    }
+    public boolean isGuideVisible() {
+        return elementExists(ACCESSIBLE_PITER_GUIDE);
     }
 }
