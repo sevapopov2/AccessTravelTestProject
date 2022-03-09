@@ -48,6 +48,7 @@ public class GuidesPageTest extends UseCaseBase {
         String guideTypeValue = guidesPage.professionalGuideTypeSelection();
         assertEquals("Professional Guide", guideTypeValue);
     }
+
     @Test
     public void piterGuidesSearchTest() {
         guidesPage.russiaPiterSelection();
@@ -58,5 +59,19 @@ public class GuidesPageTest extends UseCaseBase {
         assertEquals("true", selectedState);
         boolean isGuideLinkVisible = guidesPage.isGuideVisible();
         assertTrue(isGuideLinkVisible);
+    }
+    @Test
+    public void openGuideInfo() {
+        guidesPage.russiaPiterSelection();
+        guidesPage.professionalGuideTypeSelection();
+        guidesPage.searchButtonPress();
+        String selectedState = guidesPage.professionalGuideSelectedState();
+        assertNotNull(selectedState);
+        assertEquals("true", selectedState);
+        boolean isGuideLinkVisible = guidesPage.isGuideVisible();
+        assertTrue(isGuideLinkVisible);
+        guidesPage.guideLinkClick();
+        boolean isGuideHeadingVisible = guidesPage.isGuideHeadingVisible();
+        assertTrue(isGuideHeadingVisible);
     }
 }

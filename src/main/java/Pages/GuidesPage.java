@@ -14,6 +14,7 @@ public class GuidesPage extends BasePage {
     private static final int PROFESSIONAL_GUIDE = 5;
     private static final String SEARCH_BUTTON = "//button[@type='submit']";
     private static final String ACCESSIBLE_PITER_GUIDE = "//a[@href='/en-US/Guide/Index/24']";
+    private static final String ACCESSIBLE_GUIDE_HEADING = "//h2[contains(text(), 'Accessible Saint-Petersburg')]";
 
     public boolean isHeadingVisible() {
         return elementExists(GUIDES_HEADING);
@@ -52,7 +53,15 @@ public class GuidesPage extends BasePage {
         String optionSelectedState = findElementByXpath(professionalGuideType).getAttribute("selected");
         return optionSelectedState;
     }
+
     public boolean isGuideVisible() {
         return elementExists(ACCESSIBLE_PITER_GUIDE);
+    }
+
+    public void guideLinkClick() {
+        clickElementByXpath(ACCESSIBLE_PITER_GUIDE);
+    }
+    public boolean isGuideHeadingVisible() {
+        return elementExists(ACCESSIBLE_GUIDE_HEADING);
     }
 }
