@@ -3,7 +3,7 @@ package Pages;
 public class HotelsPage extends BasePage {
     private static final String HOTELS_HEADING = "//h3[@class='sub-heading']";
     private static final String DESTINATIONS_LIST = "//select[@id='Filter_DestinationId']";
-    private static final String PITER_OPTION = "//select[@id='Filter_DestinationId']/option[5]";
+    private static final String TEL_AVIV_OPTION = "//select[@id='Filter_DestinationId']/option[2]";
     private static final String CHECKIN_DATE = "//input[@name='Filter.CheckIn']";
     private static final String CHECKOUT_DATE = "//input[@name='Filter.CheckOut']";
     private static final String ADULTS_COUNT_EDITOR = "//input[@id='Filter_AdultNum']";
@@ -19,12 +19,12 @@ public class HotelsPage extends BasePage {
         clickElementByXpath(DESTINATIONS_LIST);
     }
 
-    public String piterOptionFind() {
-        return findElementByXpath(PITER_OPTION).getText();
+    public String telAvivOptionFind() {
+        return findElementByXpath(TEL_AVIV_OPTION).getText();
     }
 
-    public void piterOptionClick() {
-        clickElementByXpath(PITER_OPTION);
+    public void telAvivOptionClick() {
+        clickElementByXpath(TEL_AVIV_OPTION);
     }
 
     public boolean checkinDateFind() {

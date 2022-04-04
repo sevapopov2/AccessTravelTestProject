@@ -27,7 +27,7 @@ public class HotelsPageTest extends UseCaseBase {
     @Test
     public void destinationsSelectionTest() {
         hotelsPage.destinationsListSelection();
-        hotelsPage.piterOptionFind();
+        hotelsPage.telAvivOptionFind();
     }
 
     @Test
@@ -38,14 +38,14 @@ public class HotelsPageTest extends UseCaseBase {
 
     @Test
     public void checkinSelectionTest() {
-        String checkinDate = hotelsPage.checkinDateSelection("2021-09-25");
-        assertEquals("2021-09-25", checkinDate);
+        String checkinDate = hotelsPage.checkinDateSelection("2022-09-25");
+        assertEquals("2022-09-25", checkinDate);
     }
 
     @Test
     public void checkoutSelectionTest() {
-        String checkOutDate = hotelsPage.checkoutDateSelection("2021-10-01");
-        assertEquals("2021-10-01", checkOutDate);
+        String checkOutDate = hotelsPage.checkoutDateSelection("2022-10-01");
+        assertEquals("2022-10-01", checkOutDate);
     }
 
     @Test
@@ -59,6 +59,7 @@ public class HotelsPageTest extends UseCaseBase {
         String childrenCount = hotelsPage.childrenCountSelection("2");
         assertEquals("2", childrenCount);
     }
+
     @Test
     public void openResultsPageTest() {
         HotelsResultsPage hotelsResultsPage = hotelsPage.openResultsPage();
@@ -66,13 +67,14 @@ public class HotelsPageTest extends UseCaseBase {
         assertTrue(resultsAreAvailable);
 
     }
+
     @Test
-    public void findPiterHotelsTest() {
-        hotelsPage.piterOptionClick();
-        String checkinDate = hotelsPage.checkinDateSelection("2021-10-01");
-        assertEquals("2021-10-01", checkinDate);
-        String checkoutDate = hotelsPage.checkoutDateSelection("2021-10-10");
-        assertEquals("2021-10-10", checkoutDate);
+    public void findTelAvivHotelsTest() {
+        hotelsPage.telAvivOptionClick();
+        String checkinDate = hotelsPage.checkinDateSelection("2022-10-01");
+        assertEquals("2022-10-01", checkinDate);
+        String checkoutDate = hotelsPage.checkoutDateSelection("2022-10-10");
+        assertEquals("2022-10-10", checkoutDate);
         String adultsCount = hotelsPage.adultsCountSelection("4");
         assertEquals("4", adultsCount);
         String childrenCount = hotelsPage.childrenCountSelection("0");
