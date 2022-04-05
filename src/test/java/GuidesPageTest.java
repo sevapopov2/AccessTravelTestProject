@@ -32,12 +32,12 @@ public class GuidesPageTest extends UseCaseBase {
     }
 
     @Test
-    public void russiaPiterSelectionTest() {
-        guidesPage.russiaPiterSelection();
+    public void israelTelAvivSelectionTest() {
+        guidesPage.israelTelAvivSelection();
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {2, 3, 4, 5})
+    @ValueSource(ints = { 2, 3, 4, 5 })
     public void guideTypeSelectionTest(int number) {
         String currentType = guidesPage.guideTypeSelection(number);
         assertNotNull(currentType);
@@ -50,8 +50,8 @@ public class GuidesPageTest extends UseCaseBase {
     }
 
     @Test
-    public void piterGuidesSearchTest() {
-        guidesPage.russiaPiterSelection();
+    public void telAvivGuidesSearchTest() {
+        guidesPage.israelTelAvivSelection();
         guidesPage.professionalGuideTypeSelection();
         guidesPage.searchButtonPress();
         String selectedState = guidesPage.professionalGuideSelectedState();
@@ -60,9 +60,10 @@ public class GuidesPageTest extends UseCaseBase {
         boolean isGuideLinkVisible = guidesPage.isGuideVisible();
         assertTrue(isGuideLinkVisible);
     }
+
     @Test
     public void openGuideInfo() {
-        guidesPage.russiaPiterSelection();
+        guidesPage.israelTelAvivSelection();
         guidesPage.professionalGuideTypeSelection();
         guidesPage.searchButtonPress();
         String selectedState = guidesPage.professionalGuideSelectedState();
