@@ -1,15 +1,20 @@
 package Pages;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class BasePage {
     protected static WebDriver webDriver;
@@ -60,4 +65,14 @@ public class BasePage {
     protected String getCurrentUrl() {
         return webDriver.getCurrentUrl();
     }
+    protected void takeScreenshot(String name) {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) webDriver;
+        File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File("Screenshots/" + name + ".jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
