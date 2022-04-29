@@ -23,6 +23,7 @@ public class SanityTest extends UseCaseBase {
     public void mainPageLoadTest() {
         boolean success = mainPage.isLogoVisible();
         assertTrue(success);
+        
     }
 
     @Test

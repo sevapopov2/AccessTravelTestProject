@@ -58,14 +58,16 @@ public class BasePage {
 
     protected WebElement findElementByLocator(String locatorXpath, String xpath, WebElement locator, int pixelsCount) {
         locator = findElementByXpath(locatorXpath);
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(with(By.xpath(xpath)).near(locator, pixelsCount)));
+        WebElement element = wait
+                .until(ExpectedConditions.presenceOfElementLocated(with(By.xpath(xpath)).near(locator, pixelsCount)));
         return element;
     }
 
     protected String getCurrentUrl() {
         return webDriver.getCurrentUrl();
     }
-    protected void takeScreenshot(String name) {
+
+    public void takeScreenshot(String name) {
         TakesScreenshot takesScreenshot = (TakesScreenshot) webDriver;
         File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
