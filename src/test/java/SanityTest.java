@@ -23,7 +23,7 @@ public class SanityTest extends UseCaseBase {
     public void mainPageLoadTest() {
         boolean success = mainPage.isLogoVisible();
         assertTrue(success);
-        mainPage.takeScreenshot("mainPageTestResult");
+        //mainPage.takeScreenshot("mainPageTestResult");
     }
 
     @Test
@@ -31,6 +31,7 @@ public class SanityTest extends UseCaseBase {
         HotelsPage hotelsPage = mainPage.openHotelsPage();
         boolean success = hotelsPage.headingIsVisible();
         assertTrue(success);
+        hotelsPage.takeScreenshot("hotelsPageLoadTest");
     }
 
     @Test
@@ -38,6 +39,7 @@ public class SanityTest extends UseCaseBase {
         GuidesPage guidesPage = mainPage.openGuidesPage();
         boolean success = guidesPage.isHeadingVisible();
         assertTrue(success);
+        guidesPage.takeScreenshot("guidesPageLoadTest");
     }
 
     @Test
@@ -45,6 +47,7 @@ public class SanityTest extends UseCaseBase {
         ToursPage toursPage = mainPage.openToursPage();
         boolean success = toursPage.isHeadingVisible();
         assertTrue(success);
+        toursPage.takeScreenshot("toursPageLoadTest");
     }
 
     @Test
@@ -52,5 +55,6 @@ public class SanityTest extends UseCaseBase {
         ThingsToDoPage thingsToDoPage = mainPage.openThingsToDoPage();
         boolean success = thingsToDoPage.isHeadingVisible();
         assertTrue(success);
+        thingsToDoPage.takeScreenshot("thingsToDoLoadTest");
     }
 }
