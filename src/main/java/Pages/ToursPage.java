@@ -2,7 +2,7 @@ package Pages;
 
 public class ToursPage extends BasePage {
     private static final String TOURS_PAGE_HEADING = "//h2[contains(text(), 'tours and services')]";
-    //Saint-petersburg selection
+    // Saint-petersburg selection
     private static final String COUNTRY_SELECTION_LIST = "//select[@id='Filter_CountryId']";
     private static final String COUNTRY_RUSSIA_OPTION = "//select[@id='Filter_CountryId']/option[9]";
     private static final String DESTINATION_SELECTION_LIST = "//select[@id='Filter_DestinationId']";
@@ -18,6 +18,14 @@ public class ToursPage extends BasePage {
 
     public boolean countrySelectorVisible() {
         return elementExists(COUNTRY_SELECTION_LIST);
+    }
+
+    public void clickCountrySelector() {
+        clickElementByXpath(COUNTRY_SELECTION_LIST);
+    }
+
+    public boolean russiaIsAvailable() {
+        return elementExists(COUNTRY_RUSSIA_OPTION);
     }
 
     public void russiaPiterSelection() {

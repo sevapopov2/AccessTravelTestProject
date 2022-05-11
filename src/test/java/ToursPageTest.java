@@ -37,10 +37,15 @@ public class ToursPageTest extends UseCaseBase {
     @Test
     public void tourSearchTest() {
         toursPage.countrySelectorVisible();
+        toursPage.clickCountrySelector();
+        boolean russiaIsVisible = toursPage.russiaIsAvailable();
+        toursPage.takeScreenshot("toursTestFail");
         toursPage.russiaPiterSelection();
+
         toursPage.searchButtonPress();
         toursPage.clickTourLink();
         boolean isTourHeadingVisible = toursPage.findTourHeading();
         assertTrue(isTourHeadingVisible);
+
     }
 }
